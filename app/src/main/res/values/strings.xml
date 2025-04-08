@@ -20,8 +20,34 @@
     <string name="details_pack_already_added">Sticker pack added to WhatsApp</string>
     <string name="analytics_key_app_version">app_version</string>
     <string name="analytics_key_start_time">start_time</string>
-    <string name="str_made_with">Made with ♡ from Canada</string>
+    <string name="str_made_with">Made with ♡ from Indonesia</string>
     <string name="url_app_privacy_policy" translatable="false">https://ae-app-labs.github.io/privacy-policy/ae-sticker-app</string>
     <string name="str_close">Close Dialog</string>
     <string name="str_large_icon_view">Select an icon to view a larger preview.</string>
+
+    <string-array name="text_animations">
+        <item>Fade In</item>
+        <item>Slide Up</item>
+        <item>Zoom In</item>
+        <item>Rotate</item>
+        <item>Bounce</item>
+        <item>Slide Down</item>
+        <item>Flip</item>
+        <item>Wobble</item>
+        <item>Shake</item>
+        <item>Expand</item>
+    </string-array>
+
+    <string-array name="border_animations">
+        <item>Pulse</item>
+        <item>Glow</item>
+        <item>Dash</item>
+        <item>Expand</item>
+        <item>Shrink</item>
+        <item>Wave</item>
+        <item>Ripple</item>
+        <item>Outline</item>
+        <item>Flash</item>
+        <item>Color Change</item>
+    </string-array>
 </resources>
