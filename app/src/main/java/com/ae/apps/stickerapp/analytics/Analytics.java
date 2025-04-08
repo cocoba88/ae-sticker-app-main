@@ -5,7 +5,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 
 import com.ae.apps.stickerapp.R;
-import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.Calendar;
 
@@ -14,7 +13,6 @@ import java.util.Calendar;
  */
 public class Analytics {
     private static Analytics sInstance;
-    private static FirebaseAnalytics firebaseAnalytics;
 
     public static final String VIEW_ITEM = "view_item";
     private static final String APP_START = "app_start";
@@ -27,7 +25,6 @@ public class Analytics {
     }
 
     private Analytics(Context context) {
-        firebaseAnalytics = FirebaseAnalytics.getInstance(context);
         initConstants(context);
     }
 
@@ -54,7 +51,7 @@ public class Analytics {
     }
 
     public void logEvent(final String eventType, final Bundle bundle) {
-        firebaseAnalytics.logEvent(eventType, bundle);
+        // No implementation needed
     }
 
     public void logEvent(final String eventType, final String paramName, String paramValue) {
