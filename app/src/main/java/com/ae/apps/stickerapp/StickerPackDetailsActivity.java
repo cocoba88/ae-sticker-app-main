@@ -29,8 +29,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ae.apps.stickerapp.reviews.AppReview;
-
 import java.lang.ref.WeakReference;
 
 public class StickerPackDetailsActivity extends BaseActivity {
@@ -95,8 +93,6 @@ public class StickerPackDetailsActivity extends BaseActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(showUpButton);
             getSupportActionBar().setTitle(showUpButton ? R.string.title_activity_sticker_pack_details_multiple_pack : R.string.title_activity_sticker_pack_details_single_pack);
         }
-
-        AppReview.getInstance().launchReviewFlow(this);
     }
 
     private void setToolBar() {
