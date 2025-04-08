@@ -4,12 +4,12 @@ apply plugin: 'org.jetbrains.kotlin.android'
 android {
     //the compression of webp file during build causes problem with FileDescriptor in ContentProvider.
 
-    compileSdk 33
+    compileSdkVersion 34
 
     defaultConfig {
         applicationId "com.ae.apps.stickerapp"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 31
         versionCode 23
         versionName "1.10.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -25,14 +25,16 @@ android {
     }
     buildTypes {
         debug {
+            // Debug build tidak perlu proguard
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
+            // Pastikan proguard diaktifkan untuk rilis
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         dev {
             minifyEnabled true
