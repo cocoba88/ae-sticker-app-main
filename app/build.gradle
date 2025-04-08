@@ -1,0 +1,138 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+android {
+    //the compression of webp file during build causes problem with FileDescriptor in ContentProvider.
+
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.ae.apps.stickerapp"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 23
+        versionName "1.10.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        def contentProviderAuthority = applicationId + ".stickercontentprovider"
+        // Creates a placeholder property to use in the manifest.
+        manifestPlaceholders =
+                [contentProviderAuthority: contentProviderAuthority]
+        // Adds a new field for the authority to the BuildConfig class.
+        buildConfigField("String",
+                "CONTENT_PROVIDER_AUTHORITY",
+                "\"${contentProviderAuthority}\"")
+        multiDexEnabled true
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        dev {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    applicationVariants.configureEach { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "aeStickersApp-${variant.versionName}-${variant.name}-${variant.versionCode}.apk"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    packagingOptions {
+        jniLibs {
+            excludes += ['lib/*/libnative-imagetranscoder.so', 'lib/*/libnative-filters.so']
+        }
+    }
+
+    namespace 'com.ae.apps.stickerapp'
+
+    lint {
+        abortOnError false
+    }
+    buildFeatures {
+        buildConfig true
+    }
+
+}
+
+def build_param = "${build}"
+
+if (build_param != "dev") {
+    //exclude production build
+    android.variantFilter { variant ->
+        if (variant.buildType.name == 'dev') {
+            variant.setIgnore(true)
+        }
+    }
+
+} else {
+    //exclude all except production build
+    android.variantFilter { variant ->
+        if (variant.buildType.name != 'dev') {
+            variant.setIgnore(true)
+        }
+    }
+}
+
+tasks.configureEach { task ->
+    println(task.name)
+    if (task.name.contains("assembleRelease")) {
+        task.dependsOn checkRelease
+    }
+}
+
+// Check if we are using the default ad mob configuration when creating the release build
+tasks.register('checkRelease') {
+    doLast {
+        println("checkRelease")
+        if (checkStringsValue('google_admob_app_id') == "ca-app-pub-3940256099942544~3347511713") {
+            throw new GradleException("Admob default config found. Replace the google_admob_app_id value in admob.xml")
+        }
+        if (checkStringsValue('google_admob_ad_unit_id') == "ca-app-pub-3940256099942544/6300978111") {
+            throw new GradleException("Admob default config found. Replace the google_admob_app_id value in admob.xml")
+        }
+    }
+}
+
+def checkStringsValue(keyName) {
+    def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'admob.xml' }
+    return new XmlParser().parse(stringsFile).string.find { it.@name.equals keyName }.text()
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation("com.google.android.gms:play-services-ads:23.2.0")
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation("com.google.android.play:review:2.0.1")
+    implementation("com.google.android.play:app-update:2.1.0")
+    implementation "androidx.preference:preference:1.2.1"
+
+    def fresco_version = '3.2.0'
+    implementation "com.facebook.fresco:fresco:$fresco_version"
+    implementation "com.facebook.fresco:webpsupport:$fresco_version"
+    implementation "com.facebook.fresco:animated-webp:$fresco_version"
+    implementation "com.facebook.fresco:animated-base:$fresco_version"
+
+}
+

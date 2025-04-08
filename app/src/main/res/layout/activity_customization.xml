@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Canvas for customization -->
+    <FrameLayout
+        android:id="@+id/customization_canvas"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent" />
+
+    <!-- Controls for text animation -->
+    <Spinner
+        android:id="@+id/text_animation_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customization_canvas"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:entries="@array/text_animations" />
+
+    <!-- Controls for border animation -->
+    <Spinner
+        android:id="@+id/border_animation_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_animation_spinner"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:entries="@array/border_animations" />
+
+    <!-- Input field for GIF search -->
+    <EditText
+        android:id="@+id/gif_search_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/border_animation_spinner"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Search GIFs" />
+
+    <!-- Button to trigger GIF search -->
+    <Button
+        android:id="@+id/search_gif_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gif_search_input"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="Search GIF" />
+
+    <!-- Add more controls for stroke, background, and other features -->
+
+</RelativeLayout>

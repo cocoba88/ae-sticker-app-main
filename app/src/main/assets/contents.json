@@ -1,0 +1,211 @@
+{
+  "android_play_store_link": "https://play.google.com/store/apps/details?id=com.ae.apps.stickerapp",
+  "ios_app_store_link": "",
+  "sticker_packs": [
+    {
+      "identifier": "8",
+      "name": "Flags",
+      "publisher": "ae designs",
+      "tray_image_file": "00_tray_icon.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
+      "publisher_email":"aeapplabs.ca@gmail.com",
+      "publisher_website": "https://ae-app-labs.github.io/",
+      "privacy_policy_website": "https://ae-app-labs.github.io/privacy-policy/ae-sticker-app",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "01.webp",
+          "emojis": ["😄"]
+        },
+        {
+          "image_file": "02.webp"
+        },
+        {
+          "image_file": "03.webp"
+        },
+        {
+          "image_file": "04.webp"
+        },
+        {
+          "image_file": "05.webp"
+        },
+        {
+          "image_file": "06.webp"
+        }
+      ]
+    },
+    {
+      "identifier": "2",
+      "name": "Halloween Pumpkins",
+      "publisher": "ae designs",
+      "tray_image_file": "00_tray_icon.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
+      "publisher_email": "aeapplabs.ca@gmail.com",
+      "publisher_website": "https://ae-app-labs.github.io/",
+      "privacy_policy_website": "https://ae-app-labs.github.io/privacy-policy/ae-sticker-app",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "01_pumkin.webp",
+          "emojis": ["☕","🙂"]
+        },
+        {
+          "image_file": "02_pumkin.webp",
+          "emojis": ["😄","😀"]
+        },
+        {
+          "image_file": "03_pumkin.webp",
+          "emojis": ["😆", "😂"]
+        },
+        {
+          "image_file": "04_pumkin.webp",
+          "emojis": ["😆", "😂"]
+        },
+        {
+          "image_file": "05_pumkin.webp",
+          "emojis": ["😆", "😂"]
+        }
+      ]
+    },
+    {
+      "identifier": "6",
+      "name": "Square Emojis",
+      "publisher": "ae designs",
+      "tray_image_file": "00_tray_icon.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
+      "publisher_email":"aeapplabs.ca@gmail.com",
+      "publisher_website": "https://ae-app-labs.github.io/",
+      "privacy_policy_website": "https://ae-app-labs.github.io/privacy-policy/ae-sticker-app",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "01.webp"
+        },
+        {
+          "image_file": "02.webp"
+        },
+        {
+          "image_file": "03.webp"
+        },
+        {
+          "image_file": "04.webp"
+        },
+        {
+          "image_file": "06.webp"
+        },
+        {
+          "image_file": "07.webp"
+        },
+        {
+          "image_file": "08.webp"
+        }
+      ]
+    },
+    {
+      "identifier": "5",
+      "name": "City Landmarks",
+      "publisher": "ae designs",
+      "tray_image_file": "00.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
+      "publisher_email":"aeapplabs.ca@gmail.com",
+      "publisher_website": "https://ae-app-labs.github.io/",
+      "privacy_policy_website": "https://ae-app-labs.github.io/privacy-policy/ae-sticker-app",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "01.webp"
+        },
+        {
+          "image_file": "02.webp"
+        },
+        {
+          "image_file": "03.webp"
+        },
+        {
+          "image_file": "04.webp"
+        },
+        {
+          "image_file": "05.webp"
+        },
+        {
+          "image_file": "06.webp"
+        }
+      ]
+    },
+    {
+      "identifier": "1",
+      "name": "Mythical Creature Icons",
+      "publisher": "ae app labs",
+      "tray_image_file": "00_tray_icon.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
+      "publisher_email":"aeapplabs.ca@gmail.com",
+      "publisher_website": "https://ae-app-labs.github.io/",
+      "privacy_policy_website": "https://ae-app-labs.github.io/privacy-policy/ae-sticker-app",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "01_unicorn.webp",
+          "emojis": ["☕","🙂"]
+        },
+        {
+          "image_file": "02_valkyrie.webp",
+          "emojis": ["😄","😀"]
+        },
+        {
+          "image_file": "03_wyvern.webp",
+          "emojis": ["😆", "😂"]
+        }
+      ]
+    },
+    {
+      "identifier": "7",
+      "name": "Holidays",
+      "publisher": "ae designs",
+      "tray_image_file": "00_tray_icon.png",
+      "image_data_version":"1",
+      "avoid_cache":false,
+      "publisher_email":"aeapplabs.ca@gmail.com",
+      "publisher_website": "https://ae-app-labs.github.io/",
+      "privacy_policy_website": "https://ae-app-labs.github.io/privacy-policy/ae-sticker-app",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "01.webp"
+        },
+        {
+          "image_file": "02.webp"
+        },
+        {
+          "image_file": "03.webp"
+        },
+        {
+          "image_file": "04.webp"
+        },
+        {
+          "image_file": "06.webp"
+        },
+        {
+          "image_file": "06_2.webp"
+        },
+        {
+          "image_file": "06_3.webp"
+        },
+        {
+          "image_file": "07_1.webp"
+        },
+        {
+          "image_file": "07_2.webp"
+        },
+        {
+          "image_file": "08.webp"
+        }
+      ]
+    }
+
+  ]
+}
