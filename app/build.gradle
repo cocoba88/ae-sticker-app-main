@@ -103,10 +103,7 @@ tasks.register('checkRelease') {
     }
 }
 
-def checkStringsValue(keyName) {
-    def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'admob.xml' }
-    return new XmlParser().parse(stringsFile).string.find { it.@name.equals keyName }.text()
-}
+// Removed the checkStringsValue function as admob.xml is no longer present
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
