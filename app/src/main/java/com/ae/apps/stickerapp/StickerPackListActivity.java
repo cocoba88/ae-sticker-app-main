@@ -26,7 +26,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ae.apps.stickerapp.analytics.Analytics;
-import com.ae.apps.stickerapp.reviews.AppReview;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -56,17 +55,12 @@ public class StickerPackListActivity extends BaseActivity {
         showStickerPackList(stickerPackList);
 
         initAnalytics();
-        initAppReview();
 
         setToolBar();
     }
 
     private void initAnalytics() {
         Analytics.getInstance(this).logAppStart();
-    }
-
-    private void initAppReview() {
-        AppReview.getInstance().init(this);
     }
 
     @Override
