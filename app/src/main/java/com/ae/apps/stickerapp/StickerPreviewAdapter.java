@@ -20,9 +20,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ae.apps.stickerapp.analytics.Analytics;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewViewHolder> {
 
@@ -52,8 +49,6 @@ public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewVi
         this.errorResource = errorResource;
         this.stickerPack = stickerPack;
 
-        MobileAds.initialize(context, initializationStatus -> {
-        });
         analytics = Analytics.getInstance(context);
     }
 
@@ -85,7 +80,6 @@ public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewVi
 
                 View dialogView = LayoutInflater.from(context).inflate(R.layout.sticker_dialog, null, false);
                 SimpleDraweeView simpleDraweeView = dialogView.findViewById(R.id.sticker_preview_in_dialog);
-                AdView mAdView = dialogView.findViewById(R.id.adView);
                 View closeButton = dialogView.findViewById(R.id.btnClose);
                 simpleDraweeView.setImageURI(stickerAssetUri);
 
@@ -101,7 +95,6 @@ public class StickerPreviewAdapter extends RecyclerView.Adapter<StickerPreviewVi
                     }
                 });
 
-                mAdView.loadAd(new AdRequest.Builder().build());
             }
         });
     }
