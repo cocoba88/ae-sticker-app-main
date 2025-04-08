@@ -12,9 +12,8 @@
         android:theme="@style/Theme.StickersApp"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/google_admob_app_id"/>
+        <!-- Hapus deklarasi aplikasi iklan -->
+        <!-- android:name="com.google.android.gms.ads.APPLICATION_ID" -->
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
