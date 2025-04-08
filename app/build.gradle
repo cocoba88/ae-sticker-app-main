@@ -130,5 +130,7 @@ dependencies {
     implementation "com.facebook.fresco:animated-webp:$fresco_version"
     implementation "com.facebook.fresco:animated-base:$fresco_version"
 
+    // Tambahkan dependensi Volley
+    implementation 'com.android.volley:volley:1.2.1'
 }
 
