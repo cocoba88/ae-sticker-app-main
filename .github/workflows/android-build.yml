@@ -1,4 +1,4 @@
-name: Android Builds
+name: Android Build
 
 on:
   push:
@@ -44,3 +44,12 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
+
+    - name: Build APK
+      run: ./gradlew assembleRelease
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v4.6.2
+      with:
+        name: app-release-apk
+        path: app/build/outputs/apk/release/app-release.apk
