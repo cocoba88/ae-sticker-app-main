@@ -53,8 +53,15 @@ jobs:
         APK_PATH=$(find app/build/outputs/apk/release -name "*.apk" | head -n 1)
         echo "APK_PATH=$APK_PATH" >> $GITHUB_ENV
 
+    - name: Verify APK Path
+      run: |
+        if [ ! -f "$APK_PATH" ]; then
+          echo "Error: APK not found at $APK_PATH";
+          exit 1;
+        fi
+
     - name: Upload APK
-      uses: actions/download-artifact@v4.2.1
+      uses: actions/upload-artifact@v3
       with:
         name: app-release-apk
         path: ${{ env.APK_PATH }}
