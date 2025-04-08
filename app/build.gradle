@@ -4,12 +4,12 @@ apply plugin: 'org.jetbrains.kotlin.android'
 android {
     //the compression of webp file during build causes problem with FileDescriptor in ContentProvider.
 
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.ae.apps.stickerapp"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 33
         versionCode 23
         versionName "1.10.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
